@@ -156,7 +156,8 @@ export function getJSON (url, data) {
       .setData(data)
       .submit()
       .then(checkStatus)
-      .then(parseJSON);
+      .then(parseJSON)
+      .then(delay);
 }
 
 /**
@@ -205,5 +206,5 @@ export function requestDelete (url, data) {
  * @returns {Promise}
  */
 export function delay (response) {
-  return new Promise(resolve => setTimeout(() => resolve(response), 500));
+  return new Promise(resolve => setTimeout(() => resolve(response), 1200));
 }
